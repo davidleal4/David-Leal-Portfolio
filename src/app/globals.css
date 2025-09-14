@@ -5,7 +5,7 @@
   --foreground: #ededed;
 }
 
-:root {
+@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
@@ -25,11 +25,6 @@
 
 html {
   scroll-behavior: smooth;
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 body {
@@ -37,18 +32,6 @@ body {
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-main {
-  flex: 1 0 auto;
-  width: 100%;
-  min-height: 0;
 }
 
 /* Custom scrollbar */
