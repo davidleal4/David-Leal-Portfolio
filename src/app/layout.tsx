@@ -1,20 +1,12 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "David Leal - Portfolio",
-  description: "David Leal's professional portfolio showcasing projects and experience",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        {children}
+      <body className="min-h-screen w-full overflow-x-hidden overflow-y-auto flex flex-col antialiased">
+        <main className="flex-1 w-full min-h-0">
+          {children}
+        </main>
       </body>
     </html>
   );
