@@ -62,7 +62,7 @@ export function HeroSection() {
               {/* Download Resume Button */}
               <Button size="lg" className="gap-2" asChild>
                 <a
-                  href="file:///Users/davidleal/Documents/David_Leal_Official_Resume.pdf"
+                  href="public/resume/David_Leal_Official_Resume.pdf"
                   download="David_Leal_Official_Resume.pdf"
                 >
                   <Download className="h-4 w-4" />
