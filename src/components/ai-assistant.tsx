@@ -19,7 +19,7 @@ export function AIAssistant() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hello! I&apos;m David&apos;s AI assistant. I can answer questions about his background, skills, projects, and experience. What would you like to know?",
+      text: "Hello! I am David's AI assistant. I can answer questions about his background, skills, projects, and experience. What would you like to know about David?",
       sender: 'ai',
       timestamp: new Date()
     }
