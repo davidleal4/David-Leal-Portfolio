@@ -6,7 +6,7 @@ export const personalInfo = {
   github: "https://github.com/davidleal4",
   email: "davidlealwork@gmail.com",
   location: "Houston, TX",
-  profileImage: "/images/david-profile.jpg", // Will need to add actual image
+  profileImage: "https://media.licdn.com/dms/image/v2/D4E03AQHeU_rVF0e81w/profile-displayphoto-shrink_800_800/B4EZajo.8KHIAg-/0/1746502152863?e=1760572800&v=beta&t=W7dsu6oCb5kBtdkJh-gXQ4h2jti6sy1fL-6HSM3-m8o", // Will need to add actual image
 }
 
 export const aboutInfo = {
