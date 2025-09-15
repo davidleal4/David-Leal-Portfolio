@@ -20,8 +20,10 @@ export const aboutInfo = {
   certifications: [
     "Python Certification",
     "C++ Certification", 
-    "AWS Certification",
-    "MIT Professional Education"
+  ],
+  certificationsInProgress: [
+    { name: "AWS Certification", progress: 50 }, // 50% complete
+    { name: "MIT Professional Education", progress: 50 } // 50% complete
   ],
 }
 
@@ -60,7 +62,8 @@ export const skills = {
     { name: "Python", icon: "🐍", level: "Expert" },
     { name: "C++", icon: "⚡", level: "Advanced" },
     { name: "TypeScript", icon: "📘", level: "Advanced" },
-    { name: "SQL", icon: "🗃️", level: "Advanced" }
+    { name: "SQL", icon: "🗃️", level: "Advanced" },
+    { name: "R", icon: "⚙️", level: "Advanced" }
   ],
   frameworks: [
     { name: "React", icon: "⚛️", level: "Advanced" },

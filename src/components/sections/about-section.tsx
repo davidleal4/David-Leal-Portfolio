@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { aboutInfo } from "@/data/portfolio"
-import { GraduationCap, Award, Globe } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { aboutInfo } from "@/data/portfolio";
+import { GraduationCap, Award, Globe } from "lucide-react";
+import { ProgressBar } from "@/components/ui/progress-bar";
 
 export function AboutSection() {
   const containerVariants = {
@@ -13,10 +14,10 @@ export function AboutSection() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  }
+        delayChildren: 0.1,
+      },
+    },
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -25,10 +26,10 @@ export function AboutSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <section id="about" className="py-20 bg-muted/30">
@@ -46,7 +47,8 @@ export function AboutSection() {
               About Me
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Passionate about leveraging AI and data science to solve complex problems in finance and technology.
+              Passionate about leveraging AI and data science to solve complex
+              problems in finance and technology.
             </p>
           </motion.div>
 
@@ -65,12 +67,13 @@ export function AboutSection() {
                   <p className="text-muted-foreground leading-relaxed">
                     {aboutInfo.summary}
                   </p>
-                  
+
                   <div className="space-y-3">
                     <div>
                       <h4 className="font-semibold mb-2">Education</h4>
                       <p className="text-sm text-muted-foreground">
-                        {aboutInfo.education.degree} at {aboutInfo.education.institution}
+                        {aboutInfo.education.degree} at{" "}
+                        {aboutInfo.education.institution}
                       </p>
                       <p className="text-xs text-muted-foreground">
                         {aboutInfo.education.status}
@@ -127,45 +130,33 @@ export function AboutSection() {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Certifications in Progress */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Award className="h-5 w-5 text-primary" />
+                    Certifications in Progress
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {aboutInfo.certificationsInProgress.map((cert) => (
+                      <div key={cert.name} className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span>{cert.name}</span>
+                          <span>{cert.progress}%</span>
+                        </div>
+                        <ProgressBar progress={cert.progress} />
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
-
-          {/* Key Highlights */}
-          <motion.div variants={itemVariants}>
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="space-y-2">
-                    <div className="text-3xl font-bold text-primary">70%</div>
-                    <div className="text-sm text-muted-foreground">Faster Analysis</div>
-                    <p className="text-xs text-muted-foreground">Achieved through ML model optimization</p>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="space-y-2">
-                    <div className="text-3xl font-bold text-primary">Multi-Million</div>
-                    <div className="text-sm text-muted-foreground">Dollar Datasets</div>
-                    <p className="text-xs text-muted-foreground">Worked with virtual power trading data</p>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="space-y-2">
-                    <div className="text-3xl font-bold text-primary">Full-Stack</div>
-                    <div className="text-sm text-muted-foreground">Development</div>
-                    <p className="text-xs text-muted-foreground">From AI models to production apps</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

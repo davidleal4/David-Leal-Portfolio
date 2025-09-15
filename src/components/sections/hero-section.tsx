@@ -59,9 +59,14 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Button size="lg" className="gap-2">
-                <Download className="h-4 w-4" />
-                Download Resume
+              <Button size="lg" className="gap-2" asChild>
+                <Link 
+                  href="/Users/davidleal/Documents/David_Leal_Official_Resume.pdf" 
+                  download
+                >
+                  <Download className="h-4 w-4" />
+                  Download Resume
+                </Link>
               </Button>
               <Button variant="outline" size="lg" asChild className="gap-2">
                 <Link href={personalInfo.github} target="_blank" rel="noopener noreferrer">
