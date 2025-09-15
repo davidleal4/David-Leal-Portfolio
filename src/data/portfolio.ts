@@ -22,7 +22,7 @@ export const aboutInfo = {
     "C++ Certification", 
     "AWS Certification",
     "MIT Professional Education"
-  ]
+  ],
 }
 
 export const experience = [
