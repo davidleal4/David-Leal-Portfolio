@@ -18,6 +18,8 @@ export function HeroSection() {
       
       <div className="container relative z-10 px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
+        </div>
+      </div>
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -60,13 +62,13 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Button size="lg" className="gap-2" asChild>
-                <Link 
-                  href="/Users/davidleal/Documents/David_Leal_Official_Resume.pdf" 
-                  download
+                <a 
+                  href="/resume/David_Leal_Official_Resume.pdf" 
+                  download="David_Leal_Official_Resume.pdf"
                 >
                   <Download className="h-4 w-4" />
                   Download Resume
-                </Link>
+                </a>
               </Button>
               <Button variant="outline" size="lg" asChild className="gap-2">
                 <Link href={personalInfo.github} target="_blank" rel="noopener noreferrer">
@@ -76,6 +78,21 @@ export function HeroSection() {
                 </Link>
               </Button>
             </motion.div>
+            <motion.p 
+              className="text-sm text-muted-foreground mt-2"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              Note: The resume will be downloaded to your default download directory. You can move it to your desktop manually if needed.
+            </motion.p>
+            <Button variant="outline" size="lg" asChild className="gap-2">
+              <Link href={personalInfo.github} target="_blank" rel="noopener noreferrer">
+                <Github className="h-4 w-4" />
+                View GitHub
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
             
             {/* Quick Stats */}
             <motion.div 
@@ -112,12 +129,16 @@ export function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Placeholder for profile image */}
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center">
-                  <div className="text-8xl font-bold text-primary/50">DL</div>
-                </div>
+                {/* Profile Image */}
+                <Image
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQHeU_rVF0e81w/profile-displayphoto-shrink_800_800/B4EZajo.8KHIAg-/0/1746502152863?e=1760572800&v=beta&t=W7dsu6oCb5kBtdkJh-gXQ4h2jti6sy1fL-6HSM3-m8o"
+                  alt="David Leal Profile Image"
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                />
               </motion.div>
-              
+
               {/* Floating elements */}
               <motion.div
                 className="absolute -top-4 -right-4 bg-primary text-primary-foreground p-3 rounded-full shadow-lg"
@@ -135,7 +156,6 @@ export function HeroSection() {
               </motion.div>
             </div>
           </motion.div>
-        </div>
         
         {/* Scroll indicator */}
         <motion.div 
@@ -156,7 +176,6 @@ export function HeroSection() {
             />
           </motion.div>
         </motion.div>
-      </div>
     </section>
   )
 }
